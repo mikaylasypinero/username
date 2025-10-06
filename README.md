@@ -7,7 +7,15 @@
 - **Date:** [Date of Completion]
 
 ## Program Description
-[Write 2-3 sentences in your own words describing what this script does and its purpose. Explain the problem it solves and how it works at a high level.]
+This little bash script (username.sh) checks if a username follows some simple rules. The rules are:
+
+only lowercase letters, numbers, or underscores
+
+it has to start with a lowercase letter
+
+it has to be at least 3 characters long but no more than 12
+
+When you run the program, it shows the rules first, then asks you to type in a username. If what you type doesn’t fit the rules, it’ll tell you and let you try again. Once you finally type something that works, it thanks you and exits.
 
 ## Username Requirements
 This script validates usernames according to the following rules:
