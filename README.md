@@ -1,21 +1,13 @@
 # README for Username Validation Script
 
 ## Author Information
-- **Name:** [Your Full Name]
-- **Course:** [Course Number and Name]
+- **Name:** Mikayla Sypinero
+- **Course:** CPSC 298
 - **Assignment:** Username Validation
-- **Date:** [Date of Completion]
+- **Date:** 10/6/25
 
 ## Program Description
-This little bash script (username.sh) checks if a username follows some simple rules. The rules are:
-
-only lowercase letters, numbers, or underscores
-
-it has to start with a lowercase letter
-
-it has to be at least 3 characters long but no more than 12
-
-When you run the program, it shows the rules first, then asks you to type in a username. If what you type doesn’t fit the rules, it’ll tell you and let you try again. Once you finally type something that works, it thanks you and exits.
+This bash script (username.sh) checks if a username follows a few simple rules. The rules are: the username can only use lowercase letters, numbers, or underscores, it has to start with a lowercase letter, and it must be at least 3 characters long but no more than 12. When you run the program, it first shows you the rules, then asks you to type a username. If what you type doesn’t fit the rules, it tells you and asks again. Once you finally enter a valid username, the program thanks you and exits.
 
 ## Username Requirements
 This script validates usernames according to the following rules:
@@ -35,11 +27,7 @@ To test with the provided input file:
 ```
 
 ## How the Script Works
-[Explain in 3-5 sentences how your script validates usernames. Include information about:]
-- The use of the `while` loop
-- The `grep` command with extended regular expressions
-- The meaning of the `-E` and `-v` flags
-- The redirect `> /dev/null 2>&1`
+The script uses a while loop so it keeps asking the user for a username until they type one that passes all the rules. Inside the loop, it checks the input against a regular expression using the [[ ]] test with regex matching. This makes sure the username starts with a lowercase letter and only contains allowed characters within the correct length. The loop only breaks when the input is valid. For automated testing with input files, redirection like < username-input is used so the program reads from a file instead of waiting for you to type.
 
 ## Regular Expression Pattern
 The validation uses the following regular expression pattern:
@@ -52,16 +40,21 @@ This pattern ensures that:
 - The total length is between 3 and 12 characters
 
 ## Testing Results
-[Describe your testing process and results. Include:]
-- Example valid usernames you tested (at least two)
-- Example invalid usernames and why they fail (at least two)
-- How you used the username-input file to test
+I tested the script by running it interactively and also with the username-input file.
+
+Example valid usernames: abc, user_123
+
+Example invalid usernames: 1abc (starts with a number), ab (too short), toolongusername123 (too long)
+
+Using the username-input file helped me check several usernames automatically to see if the program responded correctly without me having to type each one.
 
 ## Challenges and Solutions
-[Optional: Describe any challenges you encountered while creating this script and how you solved them. This could include debugging issues, understanding regular expressions, or Git workflow problems.]
+At first, I had trouble getting the file in the right place and making it executable. I also ran into issues with pushing my work to GitHub because GitHub doesn’t allow password authentication anymore. I solved that by learning how to use a personal access token. The regular expression was also a little tricky at first, but after breaking it down into pieces (start character, allowed characters, and length), it made sense.
 
 ## Resources
-[List any resources you used (class slides, ChatGPT, etc.). Please refer to the course syllabus for more details on citations.]
+Class slides and notes
+ChatGPT for debugging help and README formatting ideas
+GitHub documentation on personal access tokens
 
 ## License
 This project is part of coursework for Chapman University and is intended for educational purposes.
